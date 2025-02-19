@@ -1,0 +1,46 @@
+### Variables
+@baseUrl = http://localhost:8000/api
+@contentType = application/json
+
+### Send command - Success case
+POST {{baseUrl}}/oai/command
+Content-Type: {{contentType}}
+
+{
+    "topic": "What do you know about ivanka trump"
+}
+
+
+GET {{baseUrl}}/articles/homepage
+Content-Type: {{contentType}}
+
+# ### Send command - Empty topic
+# POST {{baseUrl}}/command
+# Content-Type: {{contentType}}
+
+# {
+#     "topic": ""
+# }
+
+# ### Send command - Long topic
+# POST {{baseUrl}}/command
+# Content-Type: {{contentType}}
+
+# {
+#     "topic": "Write a detailed explanation of how to implement a REST API using FastAPI, including authentication, database integration, and error handling. Include code examples and best practices."
+# }
+
+# ### Send command - Invalid JSON
+# POST {{baseUrl}}/command
+# Content-Type: {{contentType}}
+
+# {
+#     "invalid_field": "test"
+# }
+
+# ### Send command - Missing Content-Type header
+# POST {{baseUrl}}/command
+
+# {
+#     "topic": "test command"
+# }
